@@ -147,7 +147,7 @@ const Manager = () => {
                     {passwordarray.length === 0 && <div>Not Password Available</div>}
                     {passwordarray.length !== 0 && (
                         <div className="overflow-x-auto w-full flex justify-center">
-                            <table className="table-auto w-[80%] md:w-full overflow-hidden rounded-2xl border border-gray-300">
+                            <table className="table-auto w-full md:w-full overflow-hidden rounded-2xl border border-gray-300">
                                 <thead >
                                     <tr className='bg-gray-500 text-white'>
                                         <th className='py-2'>Site</th>
