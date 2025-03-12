@@ -54,7 +54,7 @@ const Manager = () => {
         let temp = passwordarray.filter(i => i.Id === id)
         setForm(temp[0])
         setpasswordarray(passwordarray.filter(item => item.Id !== id))
-        let res = await fetch(http://passopbackend2.onrender.com/Delete", { method: "post", headers: { "Content-type": "application/json" }, body: JSON.stringify({ Id: id}) })
+        let res = await fetch("http://passopbackend2.onrender.com/Delete", { method: "post", headers: { "Content-type": "application/json" }, body: JSON.stringify({ Id: id}) })
     }
 
     const Showpassword = () => {
