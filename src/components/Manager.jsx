@@ -12,7 +12,7 @@ const Manager = () => {
 
 
     const gettingdata=async()=>{
-        let res = await fetch("http://localhost:3000")
+        let res = await fetch("https://passopbackend2.onrender.com")
         let passwords=await res.json();
         console.log(passwords)
         setpasswordarray(passwords)
@@ -54,7 +54,7 @@ const Manager = () => {
         let temp = passwordarray.filter(i => i.Id === id)
         setForm(temp[0])
         setpasswordarray(passwordarray.filter(item => item.Id !== id))
-        let res = await fetch("http://localhost:3000/Delete", { method: "post", headers: { "Content-type": "application/json" }, body: JSON.stringify({ Id: id}) })
+        let res = await fetch(https://passopbackend2.onrender.com/Delete", { method: "post", headers: { "Content-type": "application/json" }, body: JSON.stringify({ Id: id}) })
     }
 
     const Showpassword = () => {
@@ -70,7 +70,7 @@ const Manager = () => {
     const Savepassword = async () => {
         let temp_ID=uuidv4();
         setpasswordarray([...passwordarray, { ...Form, Id: temp_ID }])
-        let res = await fetch("http://localhost:3000/Adddata", { method: "post", headers: { "Content-type": "application/json" }, body: JSON.stringify({ ...Form, Id: temp_ID }) })
+        let res = await fetch("https://passopbackend2.onrender.com/Adddata", { method: "post", headers: { "Content-type": "application/json" }, body: JSON.stringify({ ...Form, Id: temp_ID }) })
         console.log(res)
         setForm({ Site: "", Username: "", Password: "", Id: "" })
         toast('Saved Successfully!', {
@@ -86,7 +86,7 @@ const Manager = () => {
     }
 
     const Deletedata = async (Iddelete) => {
-        let res = await fetch("http://localhost:3000/Delete", { method: "post", headers: { "Content-type": "application/json" }, body: JSON.stringify({ Id: Iddelete }) })
+        let res = await fetch("https://passopbackend2.onrender.com/Delete", { method: "post", headers: { "Content-type": "application/json" }, body: JSON.stringify({ Id: Iddelete }) })
         gettingdata();
         toast('Deleted Successfully', {
             position: "top-right",
